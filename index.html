@@ -388,7 +388,7 @@ footer{background:var(--dark2);padding:30px 72px 18px;}
     </div>
   </div>
   <div class="hero-right">
-    <img src="hero.jpg?v=1774862046" alt="Schilderswerk" loading="lazy">
+    <img src="hero.jpg?v=1774857542" alt="Schilderswerk" loading="lazy">
     <div class="hero-stats-card">
       <div class="hero-stats-row">
         <div class="hero-stat"><div class="hero-stat-num">109+</div><div class="hero-stat-lbl">Jaar ervaring</div></div>
@@ -485,19 +485,12 @@ footer{background:var(--dark2);padding:30px 72px 18px;}
   const overlay = document.getElementById('lbOverlay');
   const img = document.getElementById('lbImg');
   const counter = document.getElementById('lbCounter');
-  function preload(i){
-    var idx = ((i % total) + total) % total;
-    var p = new Image();
-    p.src = imgs[idx];
-  }
   function open(i){
     cur = ((i % total) + total) % total;
     img.src = imgs[cur];
     counter.textContent = (cur + 1) + ' / ' + total;
     overlay.classList.add('lb-visible');
     document.body.style.overflow = 'hidden';
-    preload(cur + 1);
-    preload(cur + 2);
   }
   function close(){
     overlay.classList.remove('lb-visible');
